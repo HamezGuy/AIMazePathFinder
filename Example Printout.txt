@@ -1,0 +1,565 @@
+
++--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+  +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+|                       |     |                 |                             |     |     |     |           |           |     |  |     |                    |                          |
++  +--+--+  +--+--+--+--+  +  +--+--+--+  +--+  +  +--+--+--+--+--+--+--+--+  +  +--+  +  +  +--+  +--+  +  +  +--+--+  +  +  +  +  +  +  +--+--+--+  +--+  +  +--+  +--+--+--+--+--+  +
+|     |        |     |     |              |  |  |  |        |           |     |  |     |     |     |  |  |  |  |     |     |  |  |  |  |  |           |     |     |           |     |  |
++--+--+  +--+--+  +  +  +  +--+--+  +--+--+  +  +  +--+  +  +  +--+--+  +  +--+  +  +--+--+--+  +--+  +  +--+  +  +  +--+--+  +  +  +--+  +--+--+--+--+  +  +--+--+  +  +--+--+  +--+  +
+|        |        |  |  |     |     |     |  |  |     |  |           |  |     |  |        |  |        |     |     |     |  |  |        |  |           |  |        |  |        |        |
++  +--+--+  +--+--+  +  +  +--+  +--+  +  +  +  +--+  +  +--+--+--+--+  +--+  +  +--+--+  +  +--+--+--+--+  +--+  +  +  +  +  +--+--+  +  +  +--+--+  +  +--+--+  +  +--+--+  +  +--+--+
+|           |           |     |     |  |     |     |  |              |  |  |     |           |     |     |  |     |  |     |  |     |     |        |  |  |     |     |     |  |        |
++  +--+--+--+  +--+--+--+--+  +--+--+  +--+  +--+--+  +--+--+--+--+  +  +  +--+--+  +  +--+--+--+  +  +  +  +--+--+  +--+--+  +  +  +--+--+  +--+  +  +  +  +--+--+  +--+  +  +--+--+--+
+|     |     |     |                       |        |              |  |     |        |              |  |  |     |  |        |     |        |     |  |     |        |        |           |
++--+  +  +  +--+--+  +--+--+  +--+  +--+--+--+--+  +  +--+--+--+  +  +  +--+--+--+--+--+--+--+--+  +  +  +--+  +  +--+--+  +--+--+--+--+  +--+  +  +--+--+--+  +  +--+--+--+--+--+--+  +
+|     |  |     |     |           |           |     |  |        |     |           |           |     |  |     |  |           |        |     |     |        |     |     |              |  |
++  +--+  +--+  +  +--+--+--+--+--+--+--+--+  +--+--+--+  +--+  +  +--+  +--+--+  +  +--+--+  +--+  +  +--+--+  +--+  +--+--+--+  +--+  +--+  +--+--+--+  +  +--+--+  +  +--+  +--+  +  +
+|  |  |     |  |              |                 |        |     |  |     |     |     |           |           |     |        |        |        |     |     |  |        |  |        |  |  |
++  +  +--+  +  +--+--+--+  +--+  +--+--+--+--+  +  +--+--+  +--+  +  +--+--+  +--+--+  +--+--+  +--+--+--+  +--+  +--+--+  +  +--+  +--+--+--+  +--+  +--+  +--+--+--+  +--+--+  +--+  +
+|  |  |  |  |              |     |     |     |  |  |     |  |  |  |  |        |     |  |     |  |     |        |     |     |     |     |           |           |     |     |  |     |  |
++  +  +  +  +--+  +  +  +--+  +--+  +  +  +  +  +  +  +  +  +  +  +  +  +  +--+  +  +  +--+  +  +  +  +  +--+  +--+  +  +--+--+--+--+  +  +  +--+  +  +--+--+  +  +--+--+  +  +--+  +  +
+|        |     |  |  |     |     |  |  |  |  |     |  |     |     |     |     |  |  |        |     |        |        |  |              |  |     |  |  |  |        |     |  |        |  |
++--+--+--+--+  +--+  +--+  +--+  +  +  +  +--+--+--+  +--+--+  +--+--+--+--+  +  +  +  +--+--+--+--+  +--+--+--+--+  +  +  +--+--+--+--+--+--+  +  +  +  +  +--+--+  +  +  +--+--+--+  +
+|           |  |     |  |  |        |  |           |        |  |           |     |  |  |     |        |  |        |  |  |     |        |     |  |  |  |  |        |  |        |        |
++--+  +--+  +  +  +--+  +  +  +--+--+  +--+  +--+--+--+--+  +  +  +--+--+  +--+--+  +  +  +  +  +--+--+  +  +--+  +  +--+--+  +  +--+  +  +  +  +  +  +  +--+  +  +  +  +--+  +  +--+  +
+|     |  |     |     |  |  |        |     |     |           |  |  |     |  |     |  |  |  |  |  |     |     |     |     |  |  |  |        |  |  |  |  |  |     |  |  |  |     |     |  |
++  +--+  +  +--+--+  +  +  +--+--+  +  +--+--+  +  +--+--+--+--+  +  +  +  +  +  +--+  +  +  +  +  +  +--+--+  +--+--+  +  +  +  +--+--+--+  +  +  +  +  +--+--+  +--+  +  +--+--+  +  +
+|        |  |     |  |     |     |  |     |        |  |           |  |     |  |     |  |  |  |     |        |           |  |  |  |        |     |  |     |     |     |  |        |  |  |
++--+--+--+  +  +--+  +--+--+  +  +--+--+  +--+--+  +  +  +--+--+--+  +--+--+  +--+  +--+  +  +--+--+--+--+  +--+--+--+--+  +  +--+  +  +--+--+--+  +  +--+  +  +--+  +--+--+--+  +  +  +
+|        |  |        |        |  |     |     |     |  |        |     |           |  |     |        |        |     |  |     |        |           |  |  |     |     |     |     |     |  |
++  +--+  +  +--+--+--+  +--+--+  +  +--+--+  +  +--+  +  +--+  +  +--+  +--+--+--+  +  +  +--+  +  +--+  +--+  +  +  +  +--+--+--+--+--+--+--+  +  +--+  +--+--+  +  +  +--+  +--+--+  +
+|  |     |           |     |     |        |  |        |  |     |        |        |     |  |     |  |     |     |  |  |  |        |     |        |     |     |     |  |              |  |
++--+  +--+--+--+--+  +--+  +--+--+--+--+  +  +--+--+--+  +--+--+--+--+--+  +--+  +--+  +--+  +--+  +  +--+--+--+  +  +  +  +--+  +--+  +  +--+--+--+  +  +  +--+--+--+--+--+--+--+  +  +
+|     |     |     |     |     |        |  |  |     |     |           |     |  |     |  |        |  |           |  |  |  |  |     |     |           |  |  |        |     |           |  |
++  +  +  +--+  +  +--+  +--+  +  +  +  +  +  +  +--+  +--+  +--+  +--+  +--+  +--+  +--+  +--+  +  +--+  +--+  +  +  +  +  +  +--+  +--+--+--+--+  +  +--+  +--+  +  +  +--+  +--+--+  +
+|  |  |        |  |     |     |  |  |        |        |     |     |     |     |  |     |     |  |     |     |     |     |  |  |  |           |           |  |     |  |        |     |  |
++  +  +  +--+--+  +--+--+  +--+--+  +--+  +--+--+--+  +  +--+  +--+  +--+  +--+  +--+  +--+  +--+--+  +--+  +--+--+  +  +  +  +  +--+--+--+  +--+--+--+  +  +  +  +  +--+--+--+  +  +  +
+|  |     |     |     |     |        |     |        |  |     |        |     |        |     |  |     |  |        |  |  |  |  |           |     |        |  |  |  |  |  |     |     |     |
++  +--+  +  +  +--+  +  +--+  +--+--+  +--+  +--+  +  +  +--+--+--+--+  +--+--+--+  +  +  +--+  +  +  +  +  +  +  +  +  +  +--+--+--+  +  +--+  +--+--+  +  +--+  +  +--+  +  +--+--+--+
+|     |     |  |     |        |     |     |     |     |     |           |           |  |     |  |  |     |  |  |     |  |     |        |  |              |  |     |        |        |  |
++--+--+--+--+  +  +--+--+--+--+  +--+--+  +--+  +--+--+--+  +--+  +  +--+  +--+--+--+  +--+  +  +--+  +--+--+  +--+  +--+--+  +  +--+--+  +  +--+--+--+--+  +  +--+  +--+--+--+--+  +  +
+|     |     |  |     |     |           |  |  |           |  |     |     |           |     |  |  |           |        |        |  |     |              |  |  |  |     |     |     |     |
++  +  +  +  +  +--+  +  +--+  +  +--+--+  +  +--+  +--+  +  +  +--+  +--+  +--+--+--+--+--+  +  +  +--+--+  +  +--+--+  +--+--+  +  +  +  +--+--+  +  +  +  +  +--+  +  +  +  +--+--+  +
+|  |     |  |  |     |        |  |     |  |  |        |     |  |     |     |        |     |  |     |  |     |  |     |  |     |     |  |     |     |     |  |     |  |  |  |        |  |
++  +--+--+  +  +  +--+  +--+--+  +  +  +  +  +  +--+  +--+  +  +--+--+  +--+  +--+  +  +  +  +  +--+  +  +--+  +  +  +  +--+  +--+--+  +--+  +  +--+--+--+  +--+  +--+  +  +  +--+  +  +
+|  |        |  |           |     |  |     |     |  |     |     |     |        |        |  |  |  |           |  |  |     |     |     |  |     |  |           |  |     |  |     |     |  |
++  +  +--+--+  +--+--+--+--+  +--+  +--+--+--+--+  +--+  +--+  +  +  +--+--+--+  +--+--+  +  +  +--+--+--+  +--+  +--+--+  +--+  +--+  +--+--+  +  +--+--+--+  +--+  +  +--+  +  +--+  +
+|  |        |     |        |  |     |        |     |        |     |        |  |  |        |  |     |     |              |              |        |     |        |     |     |  |  |     |
++  +--+--+  +--+  +  +--+  +  +  +--+  +--+  +  +  +  +--+  +--+  +--+--+  +  +  +--+  +--+  +--+  +  +  +--+--+--+--+  +  +--+  +--+--+  +--+--+  +--+  +--+--+  +--+--+  +  +  +  +  +
+|  |     |        |  |  |     |        |     |  |        |     |     |        |     |     |     |  |  |     |        |  |  |           |  |     |  |     |     |        |  |  |     |  |
++  +  +  +--+--+--+  +  +--+  +--+--+--+  +  +--+--+--+  +--+--+--+  +--+--+  +--+  +--+--+--+  +  +  +--+  +  +--+  +  +  +  +  +--+--+  +  +  +  +  +--+  +  +--+--+  +  +  +--+--+--+
+|  |  |  |        |        |        |     |     |     |  |        |     |           |           |        |  |     |  |  |  |  |        |  |  |     |  |     |  |     |  |  |           |
++  +  +  +  +  +--+  +--+  +--+--+--+  +--+  +  +  +--+  +  +--+  +  +  +  +--+--+--+  +--+  +--+--+--+--+  +--+  +  +  +  +  +--+--+  +  +  +  +--+  +  +--+  +  +  +  +  +  +--+--+  +
+|  |  |  |  |        |     |           |  |  |  |  |     |     |     |  |        |     |     |     |  |     |     |  |  |  |        |     |  |  |     |     |  |  |  |     |     |     |
++  +--+  +  +  +--+--+  +--+  +--+--+  +  +  +  +  +  +--+--+  +--+--+  +--+--+  +  +--+--+--+  +  +  +  +--+--+--+  +--+  +--+--+--+--+--+  +  +  +--+--+--+  +  +  +--+--+--+--+  +--+
+|        |  |     |        |     |        |  |  |     |        |     |        |  |              |  |                 |        |     |        |                 |  |     |           |  |
++--+--+--+  +--+  +  +--+--+--+  +--+--+  +--+  +  +--+  +--+--+  +--+--+--+  +--+--+--+--+--+  +  +--+--+  +--+--+  +  +--+--+  +  +--+  +--+--+--+--+--+  +--+  +--+  +  +--+--+--+  +
+|           |     |     |        |        |     |  |     |                 |     |        |     |        |  |     |  |     |     |              |        |  |        |        |        |
++  +  +--+--+--+--+  +  +  +--+--+  +  +--+  +--+  +  +--+  +--+--+--+  +  +--+  +  +  +  +--+--+--+--+  +--+  +  +--+--+  +  +--+--+--+--+--+  +--+  +  +  +--+--+--+--+--+  +  +--+--+
+|  |  |              |  |     |     |  |     |     |     |  |        |  |     |     |  |  |           |     |  |     |           |        |  |     |  |  |        |     |     |  |     |
++  +  +  +  +--+--+--+--+  +  +  +--+  +--+--+  +  +--+  +  +--+  +  +--+--+  +--+--+  +  +  +--+--+  +  +  +  +--+  +  +--+--+--+  +--+  +  +--+  +  +--+  +--+  +  +  +--+--+  +  +  +
+|  |  |  |  |        |     |  |     |  |     |  |  |  |     |     |     |        |     |  |     |     |  |  |  |     |        |     |     |     |  |        |  |     |           |  |  |
++  +  +  +--+  +--+  +  +--+  +--+  +  +  +  +  +  +  +--+--+  +--+--+  +  +--+  +  +--+  +--+  +  +--+  +  +--+  +--+--+--+  +  +--+  +--+--+  +  +--+  +--+  +--+--+  +--+--+--+  +  +
+|  |  |     |     |  |  |     |     |  |  |  |  |     |     |     |     |     |  |     |     |  |        |  |     |           |  |  |  |        |  |           |           |        |  |
++  +--+--+  +--+  +  +  +--+--+  +--+  +  +--+  +--+--+--+  +  +  +--+--+--+  +  +--+  +  +--+  +--+--+--+  +  +  +  +--+--+--+  +  +  +--+  +--+  +--+--+--+--+  +--+--+  +--+--+--+  +
+|        |  |  |  |  |        |     |  |     |           |     |  |     |     |  |     |  |     |        |     |  |        |     |  |     |     |  |     |        |     |           |  |
++--+--+  +  +  +  +  +--+--+  +--+  +  +--+  +--+--+--+  +  +--+  +  +  +--+--+  +--+--+--+  +--+  +--+  +--+--+  +--+--+--+  +--+  +--+  +--+  +  +  +  +--+  +--+  +  +--+--+--+  +  +
+|        |  |     |     |     |     |              |     |     |     |           |        |     |     |        |           |     |     |     |     |  |     |  |     |           |     |
++--+--+  +  +--+  +--+  +  +--+--+  +--+--+--+--+--+  +--+--+  +--+--+--+--+--+--+  +--+  +--+  +--+--+--+--+  +--+--+--+  +--+  +  +  +--+  +--+--+  +--+  +  +  +--+--+--+--+  +--+  +
+|        |     |     |  |        |     |        |     |  |     |     |           |     |              |        |        |        |  |     |        |     |  |  |  |        |  |  |  |  |
++  +--+--+--+  +--+--+  +--+--+  +--+  +--+--+  +  +--+  +  +--+  +  +  +--+  +--+--+  +--+--+--+  +  +  +--+--+  +--+  +--+--+--+  +--+  +--+--+  +--+--+  +  +  +  +--+  +  +  +  +  +
+|     |     |        |  |     |     |           |     |  |  |     |  |     |        |     |        |     |     |     |        |     |     |     |        |  |  |     |        |     |  |
++  +  +  +--+--+--+  +  +--+  +--+  +--+--+--+--+  +  +  +  +  +--+--+--+--+--+  +  +--+--+  +--+--+--+--+  +  +--+  +--+--+  +  +--+  +--+  +  +--+--+  +  +  +--+--+  +--+--+--+--+  +
+|  |  |           |  |     |     |              |  |     |  |        |           |     |     |     |        |              |     |           |  |     |  |  |           |        |     |
++  +  +  +--+--+  +  +  +  +  +  +  +--+--+--+  +--+  +--+  +--+--+  +  +--+--+--+--+--+  +--+  +--+  +--+  +  +  +--+--+  +--+--+  +--+--+--+--+  +  +  +  +--+--+--+  +  +--+--+  +--+
+|  |  |     |  |     |  |     |              |     |  |        |  |           |           |     |     |  |  |  |  |     |        |     |     |     |     |        |     |  |           |
++--+  +  +  +  +--+--+  +--+--+--+  +  +--+--+--+  +  +  +--+  +  +--+--+--+  +  +--+--+--+--+  +  +--+  +  +--+  +--+  +--+--+  +--+--+  +  +  +--+--+--+--+--+  +  +--+  +  +--+--+  +
+|     |  |     |     |     |     |  |           |  |  |  |     |              |  |     |     |  |        |     |           |        |     |  |  |                 |     |     |     |  |
++  +--+  +--+--+  +  +--+  +  +  +--+--+--+--+  +  +--+  +  +--+  +--+--+--+--+  +  +  +  +  +  +--+--+--+  +  +--+--+--+  +  +--+--+  +--+  +  +  +--+--+--+--+--+--+  +  +  +  +  +  +
+|  |  |        |  |     |     |  |           |  |     |  |     |              |     |  |  |                 |  |     |     |              |  |     |        |     |     |  |     |  |  |
++  +  +--+--+  +  +--+  +--+--+--+  +  +--+  +  +--+  +  +--+  +  +--+--+--+  +--+--+  +--+--+--+--+  +--+--+--+  +  +  +--+--+--+  +--+  +--+--+--+  +--+  +  +  +--+  +--+--+--+--+  +
+|        |     |  |     |           |     |        |     |  |  |  |     |  |  |     |              |     |     |  |  |  |     |     |     |           |     |  |     |  |        |     |
++--+  +  +--+--+  +--+--+  +--+--+--+--+  +--+--+  +--+--+  +  +  +  +  +  +  +  +  +--+--+--+  +  +--+--+  +  +  +  +--+  +  +--+--+  +--+  +--+--+--+--+--+  +--+  +  +  +--+  +  +  +
+|     |        |           |           |        |  |        |  |  |  |  |     |  |     |        |  |        |     |     |  |  |     |     |        |     |     |  |  |     |  |  |  |  |
++  +  +--+  +--+--+--+--+--+  +  +--+  +  +--+--+  +  +  +--+  +--+  +  +--+  +  +--+--+  +--+--+  +  +  +  +--+--+--+  +  +--+  +  +--+  +--+  +--+  +  +  +  +  +  +--+--+  +  +  +--+
+|  |     |           |     |  |  |     |     |     |  |  |     |     |     |  |     |        |  |     |  |     |        |  |     |     |     |        |     |  |  |  |     |     |     |
++--+--+--+--+--+--+  +  +  +  +--+  +  +--+  +  +--+--+  +  +--+  +--+--+  +  +--+  +  +--+  +  +--+--+  +--+  +  +--+--+  +  +--+--+  +  +--+--+  +--+--+--+--+  +  +  +  +--+--+--+  +
+|        |        |     |     |     |        |  |        |  |     |     |  |        |  |  |  |  |     |     |  |  |           |     |  |           |  |           |     |  |     |     |
++  +--+  +  +--+--+--+--+--+--+  +--+--+--+--+  +  +--+  +  +--+--+  +  +  +--+--+  +  +  +  +  +  +--+--+  +  +  +  +--+--+--+  +  +  +--+  +--+--+  +  +--+--+  +--+  +  +  +  +  +--+
+|  |     |        |        |        |           |     |  |     |     |  |     |     |  |  |     |     |  |  |  |  |  |           |  |     |  |        |        |  |     |     |  |  |  |
++  +  +--+--+  +  +  +--+  +  +--+  +  +--+--+--+--+  +--+--+  +  +--+  +--+  +  +--+  +  +--+--+--+  +  +  +--+  +  +  +--+--+--+  +  +  +--+  +--+  +--+--+  +  +--+  +--+--+--+  +  +
+|  |  |     |  |  |     |     |     |           |     |        |  |           |     |  |           |  |  |  |     |  |  |     |        |     |  |     |        |     |  |           |  |
++  +  +--+  +  +  +--+  +--+  +  +--+--+--+--+  +  +--+  +--+--+  +  +--+--+--+--+  +  +  +--+--+  +  +  +  +  +--+--+  +  +  +--+--+--+--+  +  +  +--+  +--+--+--+  +  +  +--+--+--+  +
+|  |        |  |     |  |     |        |        |     |        |  |                 |  |        |  |        |  |  |     |  |                 |  |     |           |  |     |        |  |
++  +--+--+--+--+--+  +  +  +--+--+--+  +--+  +--+  +  +--+--+  +--+--+  +--+--+--+--+  +--+  +--+  +--+--+  +  +  +  +--+--+--+  +--+--+--+--+  +--+  +--+--+  +  +--+--+  +  +--+  +  +
+|        |        |  |  |  |        |     |        |  |        |        |           |        |     |     |  |           |     |  |     |     |  |  |     |     |  |     |  |  |        |
++--+--+  +  +--+  +  +--+  +--+--+  +--+  +--+--+--+--+  +--+--+  +  +  +--+--+--+  +--+--+  +  +--+  +  +--+--+  +--+--+  +  +--+  +  +  +  +  +  +  +  +--+--+  +  +--+  +--+  +--+  +
+|  |     |  |  |  |        |        |              |           |  |  |                    |  |        |  |        |     |  |        |  |  |  |  |  |  |           |              |  |  |
++  +  +--+  +  +  +--+--+--+  +--+--+  +--+--+  +  +  +--+--+--+  +--+--+--+--+--+--+  +--+  +  +--+--+  +  +--+--+  +  +  +--+--+--+  +  +--+  +  +  +--+--+--+--+--+  +--+--+--+  +  +
+|  |     |  |  |           |        |  |        |  |  |        |     |           |     |     |  |        |     |     |     |           |           |        |           |           |  |
++  +--+  +  +  +--+--+  +  +--+--+  +--+  +--+--+--+  +  +--+  +--+  +  +--+  +  +--+--+  +--+  +--+--+  +  +  +  +--+--+--+  +--+--+--+--+--+--+  +  +--+  +  +--+--+  +--+--+  +--+  +
+|  |        |     |     |     |        |     |  |     |  |  |        |     |  |        |     |  |     |  |  |     |        |  |     |     |     |  |     |  |     |  |           |     |
++  +  +--+--+--+  +  +--+--+  +  +  +  +--+  +  +  +--+  +  +--+--+--+--+  +--+--+--+  +--+  +  +  +  +--+  +  +--+--+--+  +  +  +  +--+  +  +--+  +--+  +--+  +  +  +--+--+  +--+  +  +
+|     |  |        |        |     |  |        |  |        |           |     |     |        |  |  |  |        |     |     |     |  |        |     |  |  |        |     |  |     |     |  |
++--+  +  +  +--+--+--+--+  +--+--+--+--+  +--+  +--+--+--+  +  +--+--+  +--+  +  +  +--+  +  +  +  +--+--+--+--+--+  +  +--+--+  +  +--+--+--+  +  +  +  +--+--+--+--+  +  +  +  +--+  +
+|  |  |        |        |     |     |     |     |        |  |     |     |  |  |  |     |     |  |  |                 |     |     |           |     |  |  |              |  |  |     |  |
++  +  +--+--+  +  +--+  +--+--+  +  +  +--+--+  +  +--+  +--+--+  +  +  +  +  +  +--+  +--+  +--+  +  +--+--+--+--+--+--+  +  +--+--+--+--+--+--+  +  +  +  +--+--+--+--+  +--+--+  +  +
+|  |  |     |  |     |  |        |     |     |  |     |           |  |     |  |     |     |     |                       |  |  |     |        |  |  |  |  |  |     |     |     |     |  |
++  +  +  +  +  +--+  +  +  +  +--+--+  +--+  +  +--+  +--+--+--+--+  +--+--+  +--+  +--+  +  +  +--+--+--+--+--+--+--+--+  +  +--+  +  +--+  +  +  +  +  +  +--+  +  +--+--+  +--+--+  +
+|  |     |  |  |     |     |     |     |     |  |              |     |        |        |  |  |  |     |     |  |           |        |     |  |     |     |                 |  |     |  |
++  +--+--+  +  +  +--+--+--+--+  +  +--+  +  +  +  +--+--+  +--+  +--+  +--+--+--+--+--+  +  +  +--+  +  +  +  +  +  +--+--+--+  +  +--+  +  +--+  +--+  +--+--+--+--+--+  +  +  +  +  +
+|        |  |  |        |        |        |  |           |  |     |     |        |     |  |  |        |  |  |     |     |     |  |  |     |     |  |  |  |           |     |  |  |  |  |
++--+--+  +  +  +--+--+  +  +--+  +--+--+--+--+--+--+--+--+  +  +--+  +--+  +--+  +  +  +  +--+--+--+--+  +  +--+--+--+  +  +  +  +--+  +  +--+  +  +  +  +  +--+--+  +  +  +  +  +--+  +
+|           |           |     |                             |     |        |        |     |              |              |  |           |     |     |     |        |     |     |        |
++--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+  +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+
+##2: 
+DR,LR,LR,DLR,LR,LR,LR,L,DR,DL,R,LR,LR,DLR,LR,DL,DR,LR,LR,LR,LR,LR,LR,LR,LR,DL,DR,L,DR,DL,UDR,L,DR,LR,DLR,DL,DR,LR,LR,DL,DR,DL,D,DR,DL,DR,LR,LR,LR,DLR,LR,DL,DR,LR,DLR,LR,LR,LR,LR,LR,DL
+UR,L,DR,ULR,L,DR,DL,DR,UDL,UR,LR,DLR,LR,UL,D,UD,UD,R,DLR,DL,DR,LR,LR,DL,DR,UL,UD,DR,UL,UR,UL,DR,UL,D,UD,U,UD,DR,DL,UR,UL,UD,UD,UD,U,UD,R,LR,LR,UL,DR,UDL,UR,L,UDR,DLR,LR,L,DR,L,UD
+DR,LR,UL,DR,LR,UL,UD,UD,UDR,L,DR,UL,DR,DL,UD,UD,UR,DL,UD,UR,ULR,LR,L,UD,UR,DL,UD,UR,LR,DL,D,UR,LR,UL,UR,DL,UR,UDL,UDR,DL,D,UD,UR,ULR,DL,UD,DR,LR,LR,DL,UD,UR,LR,DL,UD,UR,LR,DL,UDR,LR,UL
+UDR,LR,LR,UL,DR,LR,ULR,UL,UR,DL,UR,L,UD,UR,UDL,UR,L,UD,UR,LR,LR,LR,DL,UD,D,UR,UL,DR,DLR,ULR,UL,R,DL,DR,DL,UD,R,UL,UD,UR,UL,UD,DR,DL,UR,UL,UDR,LR,DL,UD,UD,DR,L,UR,UDL,R,DL,UD,UR,LR,L
+UR,DL,DR,DL,UR,L,DR,LR,LR,UDLR,LR,DLR,ULR,L,UR,LR,DL,UDR,LR,LR,LR,DL,UD,UDR,UL,R,LR,UL,UR,LR,LR,LR,UDL,UD,UD,UR,DL,D,UR,LR,DL,UR,UL,UR,LR,DL,UR,DL,UD,UR,UL,UR,DLR,DL,UR,LR,UL,UR,LR,LR,DL
+DR,UL,UD,UR,DL,DR,UL,R,LR,ULR,L,UR,LR,LR,DL,R,UL,U,DR,LR,DL,UDR,UL,UDR,LR,LR,DL,DR,LR,LR,DL,R,UDL,UD,UR,L,UD,UR,DLR,LR,UL,R,DLR,L,DR,UL,DR,UL,UR,LR,DL,DR,UL,UR,DL,DR,LR,DLR,LR,DL,UD
+UD,D,UR,DL,UD,UR,LR,LR,DLR,L,DR,LR,LR,LR,ULR,DL,DR,LR,UL,DR,UL,UD,DR,UL,R,DL,UR,UL,DR,LR,ULR,DL,UR,ULR,LR,DL,UR,DL,UR,LR,DL,DR,ULR,DL,UR,LR,UL,DR,L,DR,UL,UD,R,LR,UL,UD,R,ULR,DL,U,UD
+UD,UD,D,UD,UR,DLR,DLR,DLR,UL,DR,UL,DR,DL,DR,DL,UD,UD,DR,DL,UD,D,UD,UD,DR,DLR,UL,DR,DL,UD,R,DL,UD,DR,DL,DR,ULR,DL,UR,DL,DR,UL,UR,L,UR,DL,DR,DLR,ULR,DL,UDR,LR,ULR,DL,DR,L,UR,DL,D,UR,DL,UD
+UR,ULR,UL,UR,DL,U,UD,UR,DL,UR,DL,UD,UD,UD,U,UR,UL,UD,UR,UL,UDR,UL,UR,UL,UR,DL,UD,UD,UDR,LR,UL,UR,UL,UDR,ULR,L,UR,LR,UDL,UD,DR,LR,LR,LR,UL,U,UR,DL,UD,UD,D,DR,ULR,UL,DR,DL,UD,UR,LR,UL,UD
+R,DLR,LR,DL,UD,DR,UL,D,UD,DR,ULR,UL,UD,UR,DLR,LR,L,UR,LR,DL,UD,DR,LR,LR,DL,UR,UL,UD,UD,DR,DL,DR,LR,UL,D,DR,LR,DL,UD,U,UR,DL,DR,LR,DL,DR,DL,UD,UD,UD,UD,UR,DLR,DL,UD,UDR,ULR,DL,DR,LR,UDL
+DR,UL,D,UDR,UL,UR,DL,UD,UD,UR,LR,DL,UDR,L,UR,DL,DR,LR,LR,UL,U,UD,DR,DL,UD,DR,DL,U,UD,UD,UD,UD,DR,DL,UR,UL,DR,UL,UR,DL,D,UD,UD,R,ULR,UL,UD,UD,UD,UD,UD,R,UL,UD,U,UD,DR,UL,UR,DL,UD
+UR,LR,UL,UD,DR,L,UD,UR,UL,DR,DL,U,UR,DL,R,ULR,UDL,D,DR,LR,LR,UL,UD,UR,UL,UD,UR,DL,U,UD,UD,UR,UL,UR,LR,DL,UR,LR,LR,UL,UD,UD,U,DR,DLR,L,UR,UL,UD,UDR,UL,DR,DL,UR,DL,U,UR,LR,DL,UD,UD
+DR,LR,DL,UD,UR,LR,UL,DR,LR,UL,UD,DR,L,UR,DL,DR,UL,UD,UDR,LR,DL,DR,UL,DR,LR,ULR,L,UD,DR,UDL,UR,DLR,DL,R,DLR,UL,DR,DL,D,DR,UL,UR,LR,UL,UR,LR,LR,DL,UD,U,DR,UL,UR,DL,UDR,DL,R,DL,UR,UL,UD
+U,DR,UL,UR,LR,LR,DL,UR,DL,R,UL,UR,LR,DL,UD,UR,LR,UL,UD,R,UL,UR,LR,UL,DR,LR,DL,UR,UDL,U,DR,UL,UD,DR,UL,R,UL,UD,UD,UD,DR,LR,DL,R,DL,DR,LR,UL,UR,DL,UDR,DL,R,UL,U,UR,LR,ULR,LR,DL,UD
+DR,UDL,DR,L,DR,DL,UR,DL,UR,DL,DR,DLR,DL,UD,UD,DR,L,DR,UL,DR,LR,DLR,L,DR,UL,D,UR,DL,U,DR,ULR,DL,UD,UR,DLR,LR,DL,UD,UD,UD,UD,DR,UL,DR,UL,UR,LR,LR,DL,UD,U,UDR,LR,DL,DR,DL,R,DLR,LR,UL,UD
+UD,UD,UDR,LR,UL,UD,R,UL,DR,UL,U,UD,UR,UDLR,UL,UR,LR,UDL,DR,UL,DR,UL,DR,UL,DR,UL,D,UR,DL,UR,DL,U,UR,DL,UR,DL,UR,UL,UDR,UDL,UD,UD,D,UR,LR,LR,DL,R,ULR,ULR,DL,UD,DR,UDL,UD,UR,LR,UL,DR,DL,UD
+UD,UR,UDL,DR,DL,UR,DL,DR,UL,DR,LR,UL,DR,UL,DR,LR,DL,UD,UDR,L,UR,LR,UL,DR,UL,R,ULR,DL,UDR,DL,U,DR,DL,UD,DR,UDLR,DL,D,UD,UD,UD,UR,ULR,LR,DL,DR,UL,DR,LR,L,UD,UD,U,UD,UD,R,DL,DR,UL,UR,UL
+UR,L,UR,UL,UD,DR,UL,UR,LR,UL,DR,L,UR,DL,UR,DL,UR,UL,UR,DL,R,DLR,DLR,UL,DR,LR,LR,UL,UD,UR,DL,UD,U,UDR,UL,U,UD,UR,UDL,U,UR,DL,DR,LR,UL,UD,DR,ULR,LR,LR,UL,UD,DR,UL,UDR,LR,UL,UR,LR,DL,D
+DR,DL,DR,DL,UD,UR,DL,DR,L,DR,UDLR,LR,L,UD,D,UR,DLR,LR,DL,UD,DR,UL,UDR,L,UDR,LR,LR,L,UR,L,UD,UD,DR,ULR,LR,DL,UDR,LR,UL,DR,LR,UL,UD,DR,DL,UDR,ULR,LR,DLR,DL,D,UD,UD,R,UDL,DR,DL,DR,L,UR,UDL
+UD,UR,UL,UD,UD,DR,UL,UDR,LR,UL,UD,DR,DL,UD,UD,DR,ULR,DL,UR,UDL,UD,R,UL,DR,UL,DR,LR,DL,DR,DL,UD,UDR,UL,D,DR,UL,UD,DR,DL,UD,R,DL,UR,UL,UD,UR,DL,DR,UL,UR,UL,UD,UR,DL,U,UD,UD,UDR,LR,DL,UD
+UD,DR,LR,UL,UD,UR,LR,ULR,L,DR,UL,UD,UR,UL,UR,UL,D,UR,DL,UR,UDL,DR,DL,UR,LR,UL,DR,ULR,UL,UD,UD,UD,R,ULR,ULR,DL,U,UD,UR,UL,DR,UL,DR,L,UD,R,UL,UD,DR,LR,LR,UL,D,UR,DL,UD,UR,UDL,DR,UL,UD
+UD,UR,LR,DL,UR,DL,DR,LR,DL,UD,DR,UL,DR,LR,DL,DR,UDL,DR,ULR,DL,UR,UDL,UR,LR,DL,D,UD,R,DLR,UL,UD,UR,DL,DR,DL,UR,LR,ULR,LR,DL,UDR,LR,UDLR,LR,UL,DR,LR,UL,UDR,L,DR,LR,UL,DR,UL,UR,DL,UD,UD,DR,UDL
+UD,DR,DL,UR,LR,UL,UD,D,UR,UDL,UR,LR,UL,DR,UDL,U,UR,ULR,DL,UR,L,UR,DL,R,ULR,UDL,UR,DL,UR,L,UR,DL,UD,UD,UR,DL,DR,LR,DL,UD,UD,DR,UDLR,LR,L,UD,DR,DL,UD,DR,UL,DR,DL,UR,LR,DL,UD,UD,UR,UL,U
+UD,UD,UD,DR,DLR,L,UDR,ULR,DL,UR,LR,L,DR,UL,UDR,DL,DR,L,UD,DR,LR,DL,UDR,DL,DR,ULR,LR,UL,DR,LR,DLR,UL,UR,ULR,L,UD,UR,DL,UD,UD,UD,UD,UR,LR,DL,UD,UD,UDR,UL,UD,DR,UL,UD,DR,DL,UD,UD,UDR,LR,LR,DL
+UD,U,UD,UD,UDR,LR,UL,DR,UL,DR,LR,LR,UDL,D,UD,UD,UD,DR,UL,UR,DL,UR,UL,UD,UR,LR,DL,DR,UL,R,UL,DR,DL,D,DR,UL,R,UL,UD,U,UD,UR,LR,L,UR,UL,UD,UD,DR,UL,UR,L,UD,UD,UD,UR,UL,UR,L,DR,UL
+UR,LR,UL,UD,UR,DL,DR,ULR,L,UR,DL,R,ULR,UDL,U,UD,UDR,UL,DR,LR,UL,DR,L,UR,LR,DL,U,UR,LR,LR,LR,UDL,UD,UR,ULR,DLR,LR,LR,UDL,DR,ULR,L,DR,DL,R,DLR,UL,UR,ULR,LR,LR,DLR,UL,UD,UR,DL,DR,LR,LR,UL,D
+DR,DLR,LR,UL,R,UL,UDR,DL,DR,LR,UL,DR,DLR,UL,DR,UL,UD,DR,UL,DR,LR,ULR,LR,DLR,DL,UR,DL,DR,DLR,DL,R,UL,UR,LR,DL,U,DR,DL,U,UR,DL,DR,UL,UR,LR,ULR,LR,DL,R,DLR,DL,UD,R,ULR,L,UR,ULR,DL,DR,LR,UL
+UD,UD,DR,DLR,LR,LR,UL,U,UDR,DL,DR,UL,UD,R,UL,DR,UDL,UR,DL,UD,R,DLR,DL,U,UR,DL,UR,UL,UD,UD,DR,LR,LR,DL,UDR,DL,UD,UR,DL,DR,ULR,ULR,L,DR,LR,DL,D,UR,DL,UD,U,UDR,LR,DL,DR,DL,R,UL,UD,DR,DL
+UD,UD,UD,U,DR,LR,DL,DR,UL,UD,UR,DL,UD,DR,DL,UD,UD,D,UR,UL,DR,UL,UR,DL,DR,ULR,DL,DR,UL,UD,UR,DL,DR,UL,UD,UD,U,DR,UL,UR,LR,DL,DR,UL,DR,UL,UR,DL,UD,UR,DLR,UL,D,UR,UL,UDR,LR,LR,UL,UD,UD
+UD,U,UR,DL,UR,DL,UD,UD,R,UL,DR,UL,UD,UD,U,UD,UR,UL,R,DL,UDR,DL,R,UL,UR,DL,UD,UR,DL,UDR,L,UD,UR,LR,UL,UD,DR,UDL,DR,LR,LR,UL,UD,D,UD,R,DLR,UL,UD,R,ULR,LR,UL,DR,LR,ULR,DL,R,LR,UL,UD
+UR,LR,DL,UD,D,UD,UD,UR,LR,DL,UR,DL,UD,UR,DL,UR,LR,LR,DL,UDR,UL,UD,DR,DL,R,UL,UD,R,UL,U,DR,UL,DR,LR,DL,UR,UL,UD,UR,LR,L,DR,UL,UD,UR,DL,UR,DL,UD,DR,DL,R,DLR,UL,DR,DL,UR,LR,LR,DL,UD
+R,LR,UDL,UD,UR,UDL,UR,DL,DR,UL,R,UDL,UR,LR,ULR,LR,L,DR,UL,UR,DL,UR,UL,UR,LR,LR,UL,DR,LR,DL,UR,DL,UR,L,UR,LR,DL,UR,LR,LR,DL,UR,DL,UDR,DL,UR,DL,UR,UL,UD,UR,DL,UD,DR,UL,UR,LR,LR,DL,UR,UDL
+DR,LR,UL,UR,DL,UR,L,UD,UR,LR,DL,UR,DL,R,LR,DL,DR,UL,D,DR,UL,DR,DL,DR,LR,DLR,L,UR,DL,UR,LR,ULR,DLR,DL,DR,LR,UL,DR,LR,DL,UR,LR,UL,UD,UR,DL,UR,LR,DL,UR,L,UD,UD,UD,DR,LR,DL,D,UD,D,UD
+UDR,DL,DR,L,UR,LR,DL,UD,R,DL,UR,DL,UR,LR,LR,UL,UDR,DL,UD,UD,DR,UL,U,UR,L,UR,DLR,DL,UR,L,DR,LR,UL,UR,UL,DR,DL,UR,DL,UR,LR,DL,DR,UL,DR,UL,DR,DL,UR,LR,DL,UD,UD,UR,UL,DR,ULR,UL,UR,UL,UD
+UD,UD,UDR,LR,LR,DL,UD,UDR,DL,UDR,DL,UDR,LR,LR,LR,DL,U,UDR,UL,UD,UR,LR,DL,DR,LR,LR,UL,UR,L,DR,UL,DR,L,DR,LR,UDL,UDR,DLR,ULR,LR,DL,UR,UL,DR,ULR,LR,UL,U,DR,DL,UD,UD,UR,LR,LR,UDL,DR,LR,L,DR,UL
+U,UD,UDR,DL,D,UR,UL,UD,UR,UL,UR,UDLR,DLR,LR,L,UR,DL,UD,DR,ULR,DL,D,UR,ULR,LR,DL,DR,LR,LR,UL,R,UDL,DR,UL,D,UD,U,UD,R,DL,UR,LR,DL,UR,L,DR,DL,DR,UL,UR,UL,UR,LR,DL,DR,UL,UD,DR,LR,ULR,DL
+DR,UL,UD,UR,UL,DR,DL,UR,DL,DR,DL,U,UR,LR,LR,DL,UD,U,UD,DR,UL,UDR,LR,LR,LR,UL,UD,DR,DL,DR,DL,UD,UR,LR,UL,UDR,DL,UR,LR,ULR,DL,DR,ULR,L,DR,UL,UD,UD,DR,LR,LR,LR,LR,UL,UR,DL,UDR,UDL,DR,DL,UD
+UD,D,UR,LR,DL,UD,UR,DL,UR,UL,U,DR,DLR,LR,DL,UD,UR,DL,UD,UR,DL,UDR,LR,LR,LR,DL,UR,UL,UD,U,UR,ULR,LR,DLR,LR,UL,U,DR,DL,DR,UL,UR,LR,DLR,ULR,DL,U,UR,UL,DR,LR,DL,DR,DL,R,UDL,U,UR,UL,U,UD
+UR,UDLR,DL,R,UL,UD,R,UL,DR,LR,LR,UL,UR,DL,UR,ULR,DL,UR,UL,D,UD,UD,DR,DL,D,UD,DR,DL,UR,LR,LR,DLR,DL,UR,L,DR,DL,UD,UD,U,DR,DL,R,UL,DR,UL,DR,LR,LR,UL,R,UL,UD,UR,DL,UD,DR,LR,DL,DR,UDL
+DR,UDL,UR,DLR,L,UR,LR,LR,UL,DR,DLR,LR,DL,UDR,LR,L,UD,DR,DLR,UL,UD,U,UD,UD,UR,UDL,UD,UR,L,DR,LR,UL,UD,DR,DLR,UDL,UR,UL,UR,DL,UD,U,DR,DL,UR,DL,UR,DLR,L,DR,DL,DR,UDL,D,UD,UR,UL,D,UD,UD,U
+U,UR,L,UR,LR,LR,DL,DR,DL,UD,U,DR,UDL,UR,DL,DR,UL,U,UD,DR,UL,DR,UL,UR,DL,UD,UR,DL,DR,ULR,DL,D,UR,UL,UD,UR,DL,DR,LR,UL,UD,DR,UL,UR,DL,UDR,L,UR,DLR,UL,UR,UL,U,UD,UD,DR,DL,UR,UL,UR,DL
+DR,LR,DL,DR,LR,L,UR,UL,UR,UL,DR,UL,UR,LR,UL,UD,DR,LR,UDL,UD,R,UL,DR,DL,UD,UR,LR,UDL,UD,D,UD,UD,DR,L,UR,DL,UD,UD,DR,LR,ULR,UL,DR,DL,UD,UR,DLR,LR,UL,D,DR,LR,LR,UDL,UR,UDL,UD,DR,DL,DR,UL
+UD,DR,UL,UR,DLR,DL,DR,LR,DL,DR,ULR,DL,DR,LR,LR,UL,UR,DL,U,UR,DL,DR,UL,UD,UR,DL,DR,UL,UD,UD,UR,UL,UR,DL,D,UD,U,UD,UD,DR,LR,LR,UL,UD,UDR,DL,U,DR,LR,UDL,UR,LR,DL,UD,R,UDL,UR,UL,U,UD,D
+UD,UD,R,DL,UD,UD,UR,DL,UR,UDL,DR,UL,UR,LR,LR,DL,DR,UL,DR,LR,UL,UD,DR,ULR,LR,UL,UR,DL,UD,UDR,LR,LR,DL,UD,UD,UD,DR,UL,U,UD,DR,DL,R,ULR,UL,UR,DL,UD,DR,UL,DR,LR,UL,UR,DL,UD,DR,LR,LR,UL,UD
+UD,UR,LR,UL,U,UR,DL,UD,DR,UL,UR,LR,DL,R,DLR,UL,UDR,DL,UR,LR,DL,U,UR,DLR,LR,LR,LR,UL,UD,UR,DLR,L,UD,UR,ULR,UDL,UD,D,DR,UL,U,UR,DLR,LR,LR,LR,UL,UD,UR,DL,UR,LR,DLR,DL,U,UR,UDL,DR,LR,DL,UD
+UR,LR,DL,DR,LR,DL,UD,U,UD,R,LR,DL,UR,DL,UR,LR,UL,U,DR,LR,UL,DR,DLR,UDL,R,LR,LR,DL,UR,LR,UDL,DR,UL,DR,DL,U,UR,UDLR,ULR,L,DR,DL,U,DR,DL,DR,DL,UD,D,UDR,DL,R,UL,UD,DR,L,UD,U,DR,ULR,UDL
+D,DR,UL,UD,D,UD,UR,LR,UL,DR,LR,UL,DR,ULR,LR,DLR,DL,DR,ULR,LR,L,UD,U,UR,LR,LR,LR,ULR,DLR,L,UD,UDR,LR,UL,UD,DR,LR,UL,DR,DL,UD,UR,LR,UL,UD,UD,U,UD,UD,UD,UR,LR,LR,UL,UR,DLR,ULR,LR,UL,D,UD
+UD,UR,DL,UD,UD,UR,LR,DLR,DL,UR,LR,DL,U,DR,LR,UL,U,UD,DR,LR,DL,UR,DL,DR,LR,DLR,DL,R,UL,DR,UL,UD,R,LR,UDL,UDR,DL,DR,UL,UR,UL,DR,LR,LR,UL,UR,LR,ULR,UDL,UDR,LR,DL,DR,LR,LR,UDL,R,LR,DLR,UL,UD
+UD,DR,ULR,UL,UR,DL,DR,UL,UR,DL,DR,UDLR,DL,UR,DL,D,DR,UL,UD,D,UR,LR,UL,UR,DL,U,UR,LR,DL,UR,DL,UD,DR,DL,U,UD,UDR,UL,R,LR,DL,UD,DR,DL,R,DL,DR,L,UD,UR,DL,U,UDR,DL,D,UR,LR,DLR,UL,DR,UDL
+UR,UDL,D,DR,LR,UL,UR,LR,DL,UR,UL,U,UR,DLR,UL,UD,UR,LR,UL,UDR,DLR,LR,L,DR,UL,DR,DL,DR,ULR,DL,UD,UD,UD,UR,LR,UL,UR,L,DR,DL,UR,UL,UD,UDR,LR,UL,UR,DL,UD,D,UDR,LR,UL,UR,UL,D,DR,UDL,DR,UL,UD
+D,UD,UR,ULR,DL,DR,LR,DL,UR,L,DR,DL,DR,UL,R,UDL,DR,LR,DL,U,UR,DL,DR,UDL,D,UD,UD,UR,DL,UR,UDL,U,UD,DR,LR,LR,LR,LR,UL,UR,DL,DR,UL,UR,LR,LR,L,UR,UDL,UD,UD,DR,LR,LR,LR,UL,UD,U,UR,DL,UD
+UD,UD,DR,DL,UD,UR,DL,UD,DR,DLR,UL,UR,UDL,R,DL,UD,UR,DL,UR,LR,LR,UL,UD,UR,UL,UD,UR,DL,UR,DL,UDR,DL,UR,ULR,LR,LR,LR,LR,LR,L,UD,UD,R,DL,DR,LR,DL,D,UD,UD,UD,UD,R,DL,DR,L,UR,DL,R,UL,UD
+UD,UR,UL,UD,UD,DR,UL,UR,UL,UR,DL,DR,UL,DR,UDL,UD,DR,ULR,LR,DLR,L,DR,UL,DR,LR,UL,R,ULR,L,UD,UD,UD,R,DL,DR,DL,D,DR,DLR,LR,UL,UR,DLR,UDL,UR,DL,UD,UR,UDL,UR,UDL,UR,LR,ULR,ULR,LR,DL,UD,DR,DL,UD
+UR,LR,DL,UD,UD,UR,LR,DL,DR,LR,UDL,UR,LR,UL,U,UR,ULR,LR,L,UD,DR,UL,DR,UL,DR,LR,DL,DR,DL,UD,U,UR,LR,UL,UD,UD,UR,UL,UR,DL,DR,DL,UD,U,DR,UDL,UR,DL,UD,D,UD,DR,LR,LR,DL,DR,UDL,UD,UD,U,UD
+R,LR,ULR,UL,UR,LR,LR,UL,UR,L,UR,LR,LR,LR,LR,LR,LR,LR,LR,UL,UR,L,UR,LR,UL,R,ULR,UL,UR,UL,DR,LR,LR,LR,UL,UR,LR,LR,LR,UL,U,UR,ULR,LR,UL,UR,L,UR,UL,UR,UL,UR,LR,L,UR,UL,UR,UL,UR,LR,UL
+##3: 
+DLULDLDRRDLDRRRRDDRRRDLDLDLLDDRURDRRDLDLDRDRDLDLUULUUULLUUULDDDLDLUULULDDLLDLLURUURDRUULLLDDLLLDDDLDDDLULLDRDRRRDRUULUURURRDLDRRURURURRDRDRDRDRDDDDDRDLLLDLDRRRRURDDRRDDDLLURULLLDRDDLDRDRDLLDLDLLLDDRURDDRRRRDDRURRURDRUURDDRDLLDDDLDDRDLLDDDLLULDDDRURRRRRURDRDDLLDRDLLLLUULDDLLLL
+##4: 
++--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+  +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+|                       |     |                 |                             |     |     |     |           |           |     |  |     |                    |                          |
++  +--+--+  +--+--+--+--+  +  +--+--+--+  +--+  +  +--+--+--+--+--+--+--+--+  +  +--+  +  +  +--+  +--+  +  +  +--+--+  +  +  +  +  +  +  +--+--+--+  +--+  +  +--+  +--+--+--+--+--+  +
+|     |        |     |     |              |  |  |  |        |           |     |  |     |     |     |  |  |  |  |     |     |  |  |  |  |  |           |     |     |           |     |  |
++--+--+  +--+--+  +  +  +  +--+--+  +--+--+  +  +  +--+  +  +  +--+--+  +  +--+  +  +--+--+--+  +--+  +  +--+  +  +  +--+--+  +  +  +--+  +--+--+--+--+  +  +--+--+  +  +--+--+  +--+  +
+|        |        |  |  |     |     |     |  |  |     |  |           |  |     |  |        |  |        |     |     |     |  |  |        |  |           |  |        |  |        |        |
++  +--+--+  +--+--+  +  +  +--+  +--+  +  +  +  +--+  +  +--+--+--+--+  +--+  +  +--+--+  +  +--+--+--+--+  +--+  +  +  +  +  +--+--+  +  +  +--+--+  +  +--+--+  +  +--+--+  +  +--+--+
+|           |           |     |     |  |     |     |  |              |  |  |     |           |     |     |  |     |  |     |  |     |     |        |  |  |     |     |     |  |        |
++  +--+--+--+  +--+--+--+--+  +--+--+  +--+  +--+--+  +--+--+--+--+  +  +  +--+--+  +  +--+--+--+  +  +  +  +--+--+  +--+--+  +  +  +--+--+  +--+  +  +  +  +--+--+  +--+  +  +--+--+--+
+|     |     |     |                       |        |              |  |     |        |              |  |  |     |  |        |     |        |     |  |     |        |        |           |
++--+  +  +  +--+--+  +--+--+  +--+  +--+--+--+--+  +  +--+--+--+  +  +  +--+--+--+--+--+--+--+--+  +  +  +--+  +  +--+--+  +--+--+--+--+  +--+  +  +--+--+--+  +  +--+--+--+--+--+--+  +
+|     |  |     |     |           |           |     |  |        |     |           |           |     |  |     |  |           |        |     |     |        |     |     |              |  |
++  +--+  +--+  +  +--+--+--+--+--+--+--+--+  +--+--+--+  +--+  +  +--+  +--+--+  +  +--+--+  +--+  +  +--+--+  +--+  +--+--+--+  +--+  +--+  +--+--+--+  +  +--+--+  +  +--+  +--+  +  +
+|  |  |     |  |              |                 |        |     |  |     |     |     |           |           |     |        |        |        |     |     |  |        |  |        |  |  |
++  +  +--+  +  +--+--+--+  +--+  +--+--+--+--+  +  +--+--+  +--+  +  +--+--+  +--+--+  +--+--+  +--+--+--+  +--+  +--+--+  +  +--+  +--+--+--+  +--+  +--+  +--+--+--+  +--+--+  +--+  +
+|  |  |  |  |              |     |     |     |  |  |     |  |  |  |  |        |     |  |     |  |     |        |     |     |     |     |           |           |     |     |  |     |  |
++  +  +  +  +--+  +  +  +--+  +--+  +  +  +  +  +  +  +  +  +  +  +  +  +  +--+  +  +  +--+  +  +  +  +  +--+  +--+  +  +--+--+--+--+  +  +  +--+  +  +--+--+  +  +--+--+  +  +--+  +  +
+|        |     |  |  |     |     |  |  |  |  |     |  |     |     |     |     |  |  |        |     |        |        |  |              |  |     |  |  |  |        |     |  |        |  |
++--+--+--+--+  +--+  +--+  +--+  +  +  +  +--+--+--+  +--+--+  +--+--+--+--+  +  +  +  +--+--+--+--+  +--+--+--+--+  +  +  +--+--+--+--+--+--+  +  +  +  +  +--+--+  +  +  +--+--+--+  +
+|           |  |     |  |  |        |  |           |        |  |           |     |  |  |     |        |  |        |  |  |     |        |     |  |  |  |  |        |  |        |        |
++--+  +--+  +  +  +--+  +  +  +--+--+  +--+  +--+--+--+--+  +  +  +--+--+  +--+--+  +  +  +  +  +--+--+  +  +--+  +  +--+--+  +  +--+  +  +  +  +  +  +  +--+  +  +  +  +--+  +  +--+  +
+|     |  |     |     |  |  |        |     |     |           |  |  |     |  |     |  |  |  |  |  |     |     |     |     |  |  |  |        |  |  |  |  |  |     |  |  |  |     |     |  |
++  +--+  +  +--+--+  +  +  +--+--+  +  +--+--+  +  +--+--+--+--+  +  +  +  +  +  +--+  +  +  +  +  +  +--+--+  +--+--+  +  +  +  +--+--+--+  +  +  +  +  +--+--+  +--+  +  +--+--+  +  +
+|        |  |     |  |     |     |  |     |        |  |           |  |     |  |     |  |  |  |     |        |           |  |  |  |        |     |  |     |     |     |  |        |  |  |
++--+--+--+  +  +--+  +--+--+  +  +--+--+  +--+--+  +  +  +--+--+--+  +--+--+  +--+  +--+  +  +--+--+--+--+  +--+--+--+--+  +  +--+  +  +--+--+--+  +  +--+  +  +--+  +--+--+--+  +  +  +
+|        |  |        |        |  |     |     |     |  |        |     |           |  |     |        |        |     |  |     |        |           |  |  |     |     |     |     |     |  |
++  +--+  +  +--+--+--+  +--+--+  +  +--+--+  +  +--+  +  +--+  +  +--+  +--+--+--+  +  +  +--+  +  +--+  +--+  +  +  +  +--+--+--+--+--+--+--+  +  +--+  +--+--+  +  +  +--+  +--+--+  +
+|  |     |           |     |     |        |  |        |  |     |        |        |     |  |     |  |     |     |  |  |  |        |     |        |     |     |     |  |              |  |
++--+  +--+--+--+--+  +--+  +--+--+--+--+  +  +--+--+--+  +--+--+--+--+--+  +--+  +--+  +--+  +--+  +  +--+--+--+  +  +  +  +--+  +--+  +  +--+--+--+  +  +  +--+--+--+--+--+--+--+  +  +
+|     |     |     |     |     |        |  |  |     |     |           |     |  |     |  |        |  |           |  |  |  |  |     |     |           |  |  |        |     |           |  |
++  +  +  +--+  +  +--+  +--+  +  +  +  +  +  +  +--+  +--+  +--+  +--+  +--+  +--+  +--+  +--+  +  +--+  +--+  +  +  +  +  +  +--+  +--+--+--+--+  +  +--+  +--+  +  +  +--+  +--+--+  +
+|  |  |        |  |     |     |  |  |        |        |     |     |     |     |  |     |     |  |     |     |     |     |  |  |  |           |           |  |     |  |        |     |  |
++  +  +  +--+--+  +--+--+  +--+--+  +--+  +--+--+--+  +  +--+  +--+  +--+  +--+  +--+  +--+  +--+--+  +--+  +--+--+  +  +  +  +  +--+--+--+  +--+--+--+  +  +  +  +  +--+--+--+  +  +  +
+|  |     |     |     |     |        |     |        |  |     |        |     |        |     |  |     |  |        |  |  |  |  |           |     |        |  |  |  |  |  |     |     |     |
++  +--+  +  +  +--+  +  +--+  +--+--+  +--+  +--+  +  +  +--+--+--+--+  +--+--+--+  +  +  +--+  +  +  +  +  +  +  +  +  +  +--+--+--+  +  +--+  +--+--+  +  +--+  +  +--+  +  +--+--+--+
+|     |     |  |     |        |     |     |     |     |     |           |           |  |     |  |  |     |  |  |     |  |     |        |  |              |  |     |        |        |  |
++--+--+--+--+  +  +--+--+--+--+  +--+--+  +--+  +--+--+--+  +--+  +  +--+  +--+--+--+  +--+  +  +--+  +--+--+  +--+  +--+--+  +  +--+--+  +  +--+--+--+--+  +  +--+  +--+--+--+--+  +  +
+|     |     |  |     |     |           |  |  |           |  |     |     |           |     |  |  |           |        |        |  |     |              |  |  |  |     |     |     |     |
++  +  +  +  +  +--+  +  +--+  +  +--+--+  +  +--+  +--+  +  +  +--+  +--+  +--+--+--+--+--+  +  +  +--+--+  +  +--+--+  +--+--+  +  +  +  +--+--+  +  +  +  +  +--+  +  +  +  +--+--+  +
+|  |     |  |  |     |        |  |     |  |  |        |     |  |     |     |        |     |  |     |  |     |  |     |  |     |     |  |     |     |     |  |     |  |  |  |        |  |
++  +--+--+  +  +  +--+  +--+--+  +  +  +  +  +  +--+  +--+  +  +--+--+  +--+  +--+  +  +  +  +  +--+  +  +--+  +  +  +  +--+  +--+--+  +--+  +  +--+--+--+  +--+  +--+  +  +  +--+  +  +
+|  |        |  |           |     |  |     |     |  |     |     |     |        |        |  |  |  |           |  |  |     |     |     |  |     |  |           |  |     |  |     |     |  |
++  +  +--+--+  +--+--+--+--+  +--+  +--+--+--+--+  +--+  +--+  +  +  +--+--+--+  +--+--+  +  +  +--+--+--+  +--+  +--+--+  +--+  +--+  +--+--+  +  +--+--+--+  +--+  +  +--+  +  +--+  +
+|  |        |     |        |  |     |        |     |        |     |        |  |  |        |  |     |     |              |              |        |     |        |     |     |  |  |     |
++  +--+--+  +--+  +  +--+  +  +  +--+  +--+  +  +  +  +--+  +--+  +--+--+  +  +  +--+  +--+  +--+  +  +  +--+--+--+--+  +  +--+  +--+--+  +--+--+  +--+  +--+--+  +--+--+  +  +  +  +  +
+|  |     |        |  |  |     |        |     |  |        |     |     |        |     |     |     |  |  |     |        |  |  |           |  |     |  |     |     |        |  |  |     |  |
++  +  +  +--+--+--+  +  +--+  +--+--+--+  +  +--+--+--+  +--+--+--+  +--+--+  +--+  +--+--+--+  +  +  +--+  +  +--+  +  +  +  +  +--+--+  +  +  +  +  +--+  +  +--+--+  +  +  +--+--+--+
+|  |  |  |        |        |        |     |     |     |  |        |     |           |           |        |  |     |  |  |  |  |        |  |  |     |  |     |  |     |  |  |           |
++  +  +  +  +  +--+  +--+  +--+--+--+  +--+  +  +  +--+  +  +--+  +  +  +  +--+--+--+  +--+  +--+--+--+--+  +--+  +  +  +  +  +--+--+  +  +  +  +--+  +  +--+  +  +  +  +  +  +--+--+  +
+|  |  |  |  |        |     |           |  |  |  |  |     |     |     |  |        |     |     |     |  |     |     |  |  |  |        |     |  |  |     |     |  |  |  |     |     |     |
++  +--+  +  +  +--+--+  +--+  +--+--+  +  +  +  +  +  +--+--+  +--+--+  +--+--+  +  +--+--+--+  +  +  +  +--+--+--+  +--+  +--+--+--+--+--+  +  +  +--+--+--+  +  +  +--+--+--+--+  +--+
+|        |  |     |        |     |        |  |  |     |        |     |        |  |              |  |                 |        |     |        |                 |  |     |           |  |
++--+--+--+  +--+  +  +--+--+--+  +--+--+  +--+  +  +--+  +--+--+  +--+--+--+  +--+--+--+--+--+  +  +--+--+  +--+--+  +  +--+--+  +  +--+  +--+--+--+--+--+  +--+  +--+  +  +--+--+--+  +
+|           |     |     |        |        |     |  |     |                 |     |        |     |        |  |     |  |     |     |              |        |  |        |        |        |
++  +  +--+--+--+--+  +  +  +--+--+  +  +--+  +--+  +  +--+  +--+--+--+  +  +--+  +  +  +  +--+--+--+--+  +--+  +  +--+--+  +  +--+--+--+--+--+  +--+  +  +  +--+--+--+--+--+  +  +--+--+
+|  |  |              |  |     |     |  |     |     |     |  |        |  |     |     |  |  |           |     |  |     |           |        |  |     |  |  |        |     |     |  |     |
++  +  +  +  +--+--+--+--+  +  +  +--+  +--+--+  +  +--+  +  +--+  +  +--+--+  +--+--+  +  +  +--+--+  +  +  +  +--+  +  +--+--+--+  +--+  +  +--+  +  +--+  +--+  +  +  +--+--+  +  +  +
+|  |  |  |  |        |     |  |     |  |     |  |  |  |     |     |     |        |     |  |     |     |  |  |  |     |        |     |     |     |  |        |  |     |           |  |  |
++  +  +  +--+  +--+  +  +--+  +--+  +  +  +  +  +  +  +--+--+  +--+--+  +  +--+  +  +--+  +--+  +  +--+  +  +--+  +--+--+--+  +  +--+  +--+--+  +  +--+  +--+  +--+--+  +--+--+--+  +  +
+|  |  |     |     |  |  |     |     |  |  |  |  |     |     |     |     |     |  |     |     |  |        |  |     |           |  |  |  |        |  |           |           |        |  |
++  +--+--+  +--+  +  +  +--+--+  +--+  +  +--+  +--+--+--+  +  +  +--+--+--+  +  +--+  +  +--+  +--+--+--+  +  +  +  +--+--+--+  +  +  +--+  +--+  +--+--+--+--+  +--+--+  +--+--+--+  +
+|        |  |  |  |  |        |     |  |     |           |     |  |     |     |  |     |  |     |        |     |  |        |     |  |     |     |  |     |        |     |           |  |
++--+--+  +  +  +  +  +--+--+  +--+  +  +--+  +--+--+--+  +  +--+  +  +  +--+--+  +--+--+--+  +--+  +--+  +--+--+  +--+--+--+  +--+  +--+  +--+  +  +  +  +--+  +--+  +  +--+--+--+  +  +
+|        |  |     |     |     |     |              |     |     |     |           |        |     |     |        |           |     |     |     |     |  |     |  |     |           |     |
++--+--+  +  +--+  +--+  +  +--+--+  +--+--+--+--+--+  +--+--+  +--+--+--+--+--+--+  +--+  +--+  +--+--+--+--+  +--+--+--+  +--+  +  +  +--+  +--+--+  +--+  +  +  +--+--+--+--+  +--+  +
+|        |     |     |  |        |     |        |     |  |     |     |           |     |              |        |        |        |  |     |        |     |  |  |  |        |  |  |  |  |
++  +--+--+--+  +--+--+  +--+--+  +--+  +--+--+  +  +--+  +  +--+  +  +  +--+  +--+--+  +--+--+--+  +  +  +--+--+  +--+  +--+--+--+  +--+  +--+--+  +--+--+  +  +  +  +--+  +  +  +  +  +
+|     |     |        |  |     |     |           |     |  |  |     |  |     |        |     |        |     |     |     |        |     |     |     |        |  |  |     |        |     |  |
++  +  +  +--+--+--+  +  +--+  +--+  +--+--+--+--+  +  +  +  +  +--+--+--+--+--+  +  +--+--+  +--+--+--+--+  +  +--+  +--+--+  +  +--+  +--+  +  +--+--+  +  +  +--+--+  +--+--+--+--+  +
+|  |  |           |  |     |     |              |  |     |  |        |           |     |     |     |        |              |     |           |  |     |  |  |           |        |     |
++  +  +  +--+--+  +  +  +  +  +  +  +--+--+--+  +--+  +--+  +--+--+  +  +--+--+--+--+--+  +--+  +--+  +--+  +  +  +--+--+  +--+--+  +--+--+--+--+  +  +  +  +--+--+--+  +  +--+--+  +--+
+|  |  |     |  |     |  |     |              |     |  |        |  |           |           |     |     |  |  |  |  |     |        |     |     |     |     |        |     |  |           |
++--+  +  +  +  +--+--+  +--+--+--+  +  +--+--+--+  +  +  +--+  +  +--+--+--+  +  +--+--+--+--+  +  +--+  +  +--+  +--+  +--+--+  +--+--+  +  +  +--+--+--+--+--+  +  +--+  +  +--+--+  +
+|     |  |     |     |     |     |  |           |  |  |  |     |              |  |     |     |  |        |     |           |        |     |  |  |                 |     |     |     |  |
++  +--+  +--+--+  +  +--+  +  +  +--+--+--+--+  +  +--+  +  +--+  +--+--+--+--+  +  +  +  +  +  +--+--+--+  +  +--+--+--+  +  +--+--+  +--+  +  +  +--+--+--+--+--+--+  +  +  +  +  +  +
+|  |  |        |  |     |     |  |           |  |     |  |     |              |     |  |  |                 |  |     |     |              |  |     |        |     |     |  |     |  |  |
++  +  +--+--+  +  +--+  +--+--+--+  +  +--+  +  +--+  +  +--+  +  +--+--+--+  +--+--+  +--+--+--+--+  +--+--+--+  +  +  +--+--+--+  +--+  +--+--+--+  +--+  +  +  +--+  +--+--+--+--+  +
+|        |     |  |     |           |     |        |     |  |  |  |     |  |  |     |              |     |     |  |  |  |     |     |     |           |     |  |     |  |        |     |
++--+  +  +--+--+  +--+--+  +--+--+--+--+  +--+--+  +--+--+  +  +  +  +  +  +  +  +  +--+--+--+  +  +--+--+  +  +  +  +--+  +  +--+--+  +--+  +--+--+--+--+--+  +--+  +  +  +--+  +  +  +
+|     |        |           |           |        |  |        |  |  |  |  |     |  |     |        |  |        |     |     |  |  |     |     |        |     |     |  |  |     |  |  |  |  |
++  +  +--+  +--+--+--+--+--+  +  +--+  +  +--+--+  +  +  +--+  +--+  +  +--+  +  +--+--+  +--+--+  +  +  +  +--+--+--+  +  +--+  +  +--+  +--+  +--+  +  +  +  +  +  +--+--+  +  +  +--+
+|  |     |           |     |  |  |     |     |     |  |  |     |     |     |  |     |        |  |     |  |     |        |  |     |     |     |        |     |  |  |  |     |     |     |
++--+--+--+--+--+--+  +  +  +  +--+  +  +--+  +  +--+--+  +  +--+  +--+--+  +  +--+  +  +--+  +  +--+--+  +--+  +  +--+--+  +  +--+--+  +  +--+--+  +--+--+--+--+  +  +  +  +--+--+--+  +
+|        |        |     |     |     |        |  |        |  |     |     |  |        |  |  |  |  |     |     |  |  |           |     |  |           |  |           |     |  |     |     |
++  +--+  +  +--+--+--+--+--+--+  +--+--+--+--+  +  +--+  +  +--+--+  +  +  +--+--+  +  +  +  +  +  +--+--+  +  +  +  +--+--+--+  +  +  +--+  +--+--+  +  +--+--+  +--+  +  +  +  +  +--+
+|  |     |        |        |        |           |     |  |     |     |  |     |     |  |  |     |     |  |  |  |  |  |           |  |     |  |        |        |  |     |     |  |  |  |
++  +  +--+--+  +  +  +--+  +  +--+  +  +--+--+--+--+  +--+--+  +  +--+  +--+  +  +--+  +  +--+--+--+  +  +  +--+  +  +  +--+--+--+  +  +  +--+  +--+  +--+--+  +  +--+  +--+--+--+  +  +
+|  |  |     |  |  |     |     |     |           |     |        |  |           |     |  |           |  |  |  |     |  |  |     |        |     |  |     |        |     |  |           |  |
++  +  +--+  +  +  +--+  +--+  +  +--+--+--+--+  +  +--+  +--+--+  +  +--+--+--+--+  +  +  +--+--+  +  +  +  +  +--+--+  +  +  +--+--+--+--+  +  +  +--+  +--+--+--+  +  +  +--+--+--+  +
+|  |        |  |     |  |     |        |        |     |        |  |                 |  |        |  |        |  |  |     |  |                 |  |     |           |  |     |        |  |
++  +--+--+--+--+--+  +  +  +--+--+--+  +--+  +--+  +  +--+--+  +--+--+  +--+--+--+--+  +--+  +--+  +--+--+  +  +  +  +--+--+--+  +--+--+--+--+  +--+  +--+--+  +  +--+--+  +  +--+  +  +
+|        |        |  |  |  |        |     |        |  |        |        |           |        |     |     |  |           |     |  |     |     |  |  |     |     |  |     |  |  |        |
++--+--+  +  +--+  +  +--+  +--+--+  +--+  +--+--+--+--+  +--+--+  +  +  +--+--+--+  +--+--+  +  +--+  +  +--+--+  +--+--+  +  +--+  +  +  +  +  +  +  +  +--+--+  +  +--+  +--+  +--+  +
+|  |     |  |  |  |        |        |              |           |  |  |                    |  |        |  |        |     |  |        |  |  |  |  |  |  |           |              |  |  |
++  +  +--+  +  +  +--+--+--+  +--+--+  +--+--+  +  +  +--+--+--+  +--+--+--+--+--+--+  +--+  +  +--+--+  +  +--+--+  +  +  +--+--+--+  +  +--+  +  +  +--+--+--+--+--+  +--+--+--+  +  +
+|  |     |  |  |           |        |  |        |  |  |        |     |           |     |     |  |        |     |     |     |           |           |        |           |           |  |
++  +--+  +  +  +--+--+  +  +--+--+  +--+  +--+--+--+  +  +--+  +--+  +  +--+  +  +--+--+  +--+  +--+--+  +  +  +  +--+--+--+  +--+--+--+--+--+--+  +  +--+  +  +--+--+  +--+--+  +--+  +
+|  |        |     |     |     |        |     |  |     |  |  |        |     |  |        |     |  |     |  |  |     |        |  |     |     |     |  |     |  |     |  |           |     |
++  +  +--+--+--+  +  +--+--+  +  +  +  +--+  +  +  +--+  +  +--+--+--+--+  +--+--+--+  +--+  +  +  +  +--+  +  +--+--+--+  +  +  +  +--+  +  +--+  +--+  +--+  +  +  +--+--+  +--+  +  +
+|     |  |        |        |     |  |        |  |        |           |     |     |        |  |  |  |        |     |     |     |  |        |     |  |  |        |     |  |     |     |  |
++--+  +  +  +--+--+--+--+  +--+--+--+--+  +--+  +--+--+--+  +  +--+--+  +--+  +  +  +--+  +  +  +  +--+--+--+--+--+  +  +--+--+  +  +--+--+--+  +  +  +  +--+--+--+--+  +  +  +  +--+  +
+|  |  |        |        |     |     |     |     |        |  |     |     |  |  |  |     |     |  |  |                 |     |     |           |     |  |  |              |  |  |     |  |
++  +  +--+--+  +  +--+  +--+--+  +  +  +--+--+  +  +--+  +--+--+  +  +  +  +  +  +--+  +--+  +--+  +  +--+--+--+--+--+--+  +  +--+--+--+--+--+--+  +  +  +  +--+--+--+--+  +--+--+  +  +
+|  |  |     |  |     |  |        |     |     |  |     |           |  |     |  |     |     |     |                       |  |  |     |        |  |  |  |  |  |     |     |     |     |  |
++  +  +  +  +  +--+  +  +  +  +--+--+  +--+  +  +--+  +--+--+--+--+  +--+--+  +--+  +--+  +  +  +--+--+--+--+--+--+--+--+  +  +--+  +  +--+  +  +  +  +  +  +--+  +  +--+--+  +--+--+  +
+|  |     |  |  |     |     |     |     |     |  |              |     |        |        |  |  |  |     |     |  |           |        |     |  |     |     |                 |  |     |  |
++  +--+--+  +  +  +--+--+--+--+  +  +--+  +  +  +  +--+--+  +--+  +--+  +--+--+--+--+--+  +  +  +--+  +  +  +  +  +  +--+--+--+  +  +--+  +  +--+  +--+  +--+--+--+--+--+  +  +  +  +  +
+|        |  |  |        |        |        |  |           |  |     |     |        |     |  |  |        |  |  |     |     |     |  |  |     |     |  |  |  |           |     |  |  |  |  |
++--+--+  +  +  +--+--+  +  +--+  +--+--+--+--+--+--+--+--+  +  +--+  +--+  +--+  +  +  +  +--+--+--+--+  +  +--+--+--+  +  +  +  +--+  +  +--+  +  +  +  +  +--+--+  +  +  +  +  +--+  +
+|           |           |     |                             |     |        |        |     |              |              |  |           |     |     |     |        |     |     |        |
++--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+  +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+
+##5: 
+0,0,0,0,0,0,0,0,1,1,0,0,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,1,1,1,1,1,1,1,1,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,0,1,1,1,1,1,1,1,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0,1,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,0,0,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,1,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+##6: 
+0,0,0,0,0,0,0,0,1,1,0,0,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,1,1,1,1,1,1,1,1,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,0,1,1,1,1,1,1,1,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0,1,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,0,0,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,1,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+##7: 
+84,83,82,81,80,79,78,77,76,75,74,73,72,71,70,69,68,67,66,65,64,63,62,61,60,59,58,57,56,55,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84
+83,82,81,80,79,78,77,76,75,74,73,72,71,70,69,68,67,66,65,64,63,62,61,60,59,58,57,56,55,54,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83
+82,81,80,79,78,77,76,75,74,73,72,71,70,69,68,67,66,65,64,63,62,61,60,59,58,57,56,55,54,53,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82
+81,80,79,78,77,76,75,74,73,72,71,70,69,68,67,66,65,64,63,62,61,60,59,58,57,56,55,54,53,52,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81
+80,79,78,77,76,75,74,73,72,71,70,69,68,67,66,65,64,63,62,61,60,59,58,57,56,55,54,53,52,51,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80
+79,78,77,76,75,74,73,72,71,70,69,68,67,66,65,64,63,62,61,60,59,58,57,56,55,54,53,52,51,50,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79
+78,77,76,75,74,73,72,71,70,69,68,67,66,65,64,63,62,61,60,59,58,57,56,55,54,53,52,51,50,49,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78
+77,76,75,74,73,72,71,70,69,68,67,66,65,64,63,62,61,60,59,58,57,56,55,54,53,52,51,50,49,48,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77
+76,75,74,73,72,71,70,69,68,67,66,65,64,63,62,61,60,59,58,57,56,55,54,53,52,51,50,49,48,47,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76
+75,74,73,72,71,70,69,68,67,66,65,64,63,62,61,60,59,58,57,56,55,54,53,52,51,50,49,48,47,46,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75
+74,73,72,71,70,69,68,67,66,65,64,63,62,61,60,59,58,57,56,55,54,53,52,51,50,49,48,47,46,45,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74
+73,72,71,70,69,68,67,66,65,64,63,62,61,60,59,58,57,56,55,54,53,52,51,50,49,48,47,46,45,44,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73
+72,71,70,69,68,67,66,65,64,63,62,61,60,59,58,57,56,55,54,53,52,51,50,49,48,47,46,45,44,43,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72
+71,70,69,68,67,66,65,64,63,62,61,60,59,58,57,56,55,54,53,52,51,50,49,48,47,46,45,44,43,42,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71
+70,69,68,67,66,65,64,63,62,61,60,59,58,57,56,55,54,53,52,51,50,49,48,47,46,45,44,43,42,41,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70
+69,68,67,66,65,64,63,62,61,60,59,58,57,56,55,54,53,52,51,50,49,48,47,46,45,44,43,42,41,40,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69
+68,67,66,65,64,63,62,61,60,59,58,57,56,55,54,53,52,51,50,49,48,47,46,45,44,43,42,41,40,39,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68
+67,66,65,64,63,62,61,60,59,58,57,56,55,54,53,52,51,50,49,48,47,46,45,44,43,42,41,40,39,38,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67
+66,65,64,63,62,61,60,59,58,57,56,55,54,53,52,51,50,49,48,47,46,45,44,43,42,41,40,39,38,37,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66
+65,64,63,62,61,60,59,58,57,56,55,54,53,52,51,50,49,48,47,46,45,44,43,42,41,40,39,38,37,36,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65
+64,63,62,61,60,59,58,57,56,55,54,53,52,51,50,49,48,47,46,45,44,43,42,41,40,39,38,37,36,35,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64
+63,62,61,60,59,58,57,56,55,54,53,52,51,50,49,48,47,46,45,44,43,42,41,40,39,38,37,36,35,34,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+62,61,60,59,58,57,56,55,54,53,52,51,50,49,48,47,46,45,44,43,42,41,40,39,38,37,36,35,34,33,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62
+61,60,59,58,57,56,55,54,53,52,51,50,49,48,47,46,45,44,43,42,41,40,39,38,37,36,35,34,33,32,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61
+60,59,58,57,56,55,54,53,52,51,50,49,48,47,46,45,44,43,42,41,40,39,38,37,36,35,34,33,32,31,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60
+59,58,57,56,55,54,53,52,51,50,49,48,47,46,45,44,43,42,41,40,39,38,37,36,35,34,33,32,31,30,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59
+58,57,56,55,54,53,52,51,50,49,48,47,46,45,44,43,42,41,40,39,38,37,36,35,34,33,32,31,30,29,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58
+57,56,55,54,53,52,51,50,49,48,47,46,45,44,43,42,41,40,39,38,37,36,35,34,33,32,31,30,29,28,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57
+56,55,54,53,52,51,50,49,48,47,46,45,44,43,42,41,40,39,38,37,36,35,34,33,32,31,30,29,28,27,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56
+55,54,53,52,51,50,49,48,47,46,45,44,43,42,41,40,39,38,37,36,35,34,33,32,31,30,29,28,27,26,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55
+54,53,52,51,50,49,48,47,46,45,44,43,42,41,40,39,38,37,36,35,34,33,32,31,30,29,28,27,26,25,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54
+53,52,51,50,49,48,47,46,45,44,43,42,41,40,39,38,37,36,35,34,33,32,31,30,29,28,27,26,25,24,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53
+52,51,50,49,48,47,46,45,44,43,42,41,40,39,38,37,36,35,34,33,32,31,30,29,28,27,26,25,24,23,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52
+51,50,49,48,47,46,45,44,43,42,41,40,39,38,37,36,35,34,33,32,31,30,29,28,27,26,25,24,23,22,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51
+50,49,48,47,46,45,44,43,42,41,40,39,38,37,36,35,34,33,32,31,30,29,28,27,26,25,24,23,22,21,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50
+49,48,47,46,45,44,43,42,41,40,39,38,37,36,35,34,33,32,31,30,29,28,27,26,25,24,23,22,21,20,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49
+48,47,46,45,44,43,42,41,40,39,38,37,36,35,34,33,32,31,30,29,28,27,26,25,24,23,22,21,20,19,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48
+47,46,45,44,43,42,41,40,39,38,37,36,35,34,33,32,31,30,29,28,27,26,25,24,23,22,21,20,19,18,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47
+46,45,44,43,42,41,40,39,38,37,36,35,34,33,32,31,30,29,28,27,26,25,24,23,22,21,20,19,18,17,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46
+45,44,43,42,41,40,39,38,37,36,35,34,33,32,31,30,29,28,27,26,25,24,23,22,21,20,19,18,17,16,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45
+44,43,42,41,40,39,38,37,36,35,34,33,32,31,30,29,28,27,26,25,24,23,22,21,20,19,18,17,16,15,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44
+43,42,41,40,39,38,37,36,35,34,33,32,31,30,29,28,27,26,25,24,23,22,21,20,19,18,17,16,15,14,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43
+42,41,40,39,38,37,36,35,34,33,32,31,30,29,28,27,26,25,24,23,22,21,20,19,18,17,16,15,14,13,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42
+41,40,39,38,37,36,35,34,33,32,31,30,29,28,27,26,25,24,23,22,21,20,19,18,17,16,15,14,13,12,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41
+40,39,38,37,36,35,34,33,32,31,30,29,28,27,26,25,24,23,22,21,20,19,18,17,16,15,14,13,12,11,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40
+39,38,37,36,35,34,33,32,31,30,29,28,27,26,25,24,23,22,21,20,19,18,17,16,15,14,13,12,11,10,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39
+38,37,36,35,34,33,32,31,30,29,28,27,26,25,24,23,22,21,20,19,18,17,16,15,14,13,12,11,10,9,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38
+37,36,35,34,33,32,31,30,29,28,27,26,25,24,23,22,21,20,19,18,17,16,15,14,13,12,11,10,9,8,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37
+36,35,34,33,32,31,30,29,28,27,26,25,24,23,22,21,20,19,18,17,16,15,14,13,12,11,10,9,8,7,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36
+35,34,33,32,31,30,29,28,27,26,25,24,23,22,21,20,19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35
+34,33,32,31,30,29,28,27,26,25,24,23,22,21,20,19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34
+33,32,31,30,29,28,27,26,25,24,23,22,21,20,19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33
+32,31,30,29,28,27,26,25,24,23,22,21,20,19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32
+31,30,29,28,27,26,25,24,23,22,21,20,19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31
+30,29,28,27,26,25,24,23,22,21,20,19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30
+##8: 
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,1,1,1,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,1
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,1
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,1
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,1,1,1
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,1,1,1,1,1
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,1,1,0,0,0,1,1,1,1,1
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,0,0,0,0,1,1,1
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,1
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,1
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,1,1,1
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,1,1,1,1
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,1,1,1,1
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,1,1,1,1,1,1
+0,0,0,0,0,0,0,0,0,0,0,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1
+0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,1,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,0,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,0,1,1,1,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,1,1,1,1,1,1,1,1,1,0,0,1,1,1,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+##9: 
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,0,0,1
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,0,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,1,1,1,1,0,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,1,1,1,1,1,1,1
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,1,1,1,0,0,0,1,1,0,0,0,0,0,0,1,1,1,1,1,1
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,1,1,1,1,1,1,1,1,0,0,0,0,0,0,1,1,0,1,1,1
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,0,0,0,0,0,1,1,1,1,1,1,1
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,0,0,0,0,0,1,1,1,1,1,1,1
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,1,1,1,1,1,1,1
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,1,1,0,0,1,1,1,1,1,1
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,0,0,0,0,1,1,1
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,1
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,1
+0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,1,1,1
+0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,1,1,1,1
+0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,1,1,1,1
+0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,1,1,1,1,1,1
+0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1
+0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,1,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,1,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,1,0,0,1,1,1,1,1,1,1,1,1,0,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,1,1,1,1,1,1,1,1,1,0,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+##10: None
